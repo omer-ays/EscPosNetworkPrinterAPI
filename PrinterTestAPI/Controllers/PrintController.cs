@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PrinterTestAPI.Model;
@@ -6,6 +7,7 @@ using PrinterTestAPI.Services;
 
 namespace PrinterTestAPI.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [ApiController]
     [Route("[controller]")]
     public class PrintController : ControllerBase
