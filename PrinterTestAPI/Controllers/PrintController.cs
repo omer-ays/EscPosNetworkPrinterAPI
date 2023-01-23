@@ -13,7 +13,7 @@ namespace PrinterTestAPI.Controllers
     public class PrintController : ControllerBase
 	{
         PrinterService _printerService;
-		public PrintController()
+        public PrintController()
 		{
             _printerService = new PrinterService();
 		}
@@ -22,16 +22,16 @@ namespace PrinterTestAPI.Controllers
         [HttpPost]
         public IActionResult PrintReceipt([FromBody] PrintModel model)
         {
-            var response = _printerService.PrintReceipt(model.Base64, model.IpAndPort);
+            var response = _printerService.PrintReceipt(model.Printcommand, 
+                model.Adress + ":" + model.Port);
             if (response)
             {
-                return Ok("İşlem Başarılı");
+                return Ok("Veri Yazıcıya Gönderildi");
             }
             else
             {
                 return Ok("Yazdırma işlemi başarısız oldu.");
             }
-            GC.SuppressFinalize(_printerService);
         }
     }
 }

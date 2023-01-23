@@ -1,36 +1,30 @@
 ﻿using System;
 using ESCPOS_NET;
 using ESCPOS_NET.Emitters;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PrinterTestAPI.Services
 {
     public class PrinterService : IDisposable
     {
-        string ip = "";
-        string port = "";
-        string uuid = "";
         public string connectionType { get; set; }
         private ICommandEmitter emitter;
         public PrinterService()
         {
             emitter = new EPSON();
-            //ip = Settings.PrinterIp;
-            //port = Settings.PrinterPort;
-            //uuid = Settings.BluetoothUUid;
-            //connectionType = Settings.ThermalPrinterConnectionType;
         }
         public byte[][] ConvertBase64ToByteArray(string Base64String)
         {
             StringReader sr = new StringReader(Base64String);
             List<byte[]> bytes = new List<byte[]>();
-            while (sr.Peek() >= 0)
+            while (sr?.Peek() >= 0)
             {
-                string line = sr.ReadLine();
+                string line = sr?.ReadLine();
                 try
                 {
                     bytes.Add(Convert.FromBase64String(line));
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                 }
             }
@@ -47,6 +41,7 @@ namespace PrinterTestAPI.Services
 
                 printer = new ImmediateNetworkPrinter(new ImmediateNetworkPrinterSettings() { ConnectionString = ipAndPort });
                 printer.WriteAsync(byteArray);
+
                 return true;
             }
             catch (Exception ex)
@@ -61,15 +56,15 @@ namespace PrinterTestAPI.Services
         {
             var status = (PrinterStatusEventArgs)e;
         }
-        public bool PrintReceipt(string text, string ipAndPort)
-        {
-            bool response = SendBinary(text,ipAndPort);
-            return response;
-        }
-
         public void Dispose()
         {
             this.Dispose();
+        }
+
+        public bool PrintReceipt(string base64Text, string ipandPort)
+        {
+            bool response = SendBinary(base64Text, ipandPort);
+            return response;
         }
     }
 }
