@@ -13,9 +13,9 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5231",
+      "applicationUrl": "http://localhost:53555",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Release"
       }
     },
     "https": {
@@ -28,12 +28,13 @@
       }
     },
     "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+        "commandName": "IISExpress",
+        "launchBrowser": true,
+        "launchUrl": "swagger",
+        "applicationUrl": "http://localhost:53555",
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Release"
+        }
     }
   }
 }

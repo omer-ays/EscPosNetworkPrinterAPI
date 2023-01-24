@@ -1,36 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ddfgfdg\\PrinterTestAPI\\PrinterTestAPI.csproj": {}
+    "/Users/ayasofyazilim/Downloads/EscPosNetworkPrinterAPI-main/PrinterTestAPI/PrinterTestAPI.csproj": {}
   },
   "projects": {
-    "D:\\ddfgfdg\\PrinterTestAPI\\PrinterTestAPI.csproj": {
+    "/Users/ayasofyazilim/Downloads/EscPosNetworkPrinterAPI-main/PrinterTestAPI/PrinterTestAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ddfgfdg\\PrinterTestAPI\\PrinterTestAPI.csproj",
+        "projectUniqueName": "/Users/ayasofyazilim/Downloads/EscPosNetworkPrinterAPI-main/PrinterTestAPI/PrinterTestAPI.csproj",
         "projectName": "PrinterTestAPI",
-        "projectPath": "D:\\ddfgfdg\\PrinterTestAPI\\PrinterTestAPI.csproj",
-        "packagesPath": "C:\\Users\\omer.kocaman\\.nuget\\packages\\",
-        "outputPath": "D:\\ddfgfdg\\PrinterTestAPI\\obj\\",
+        "projectPath": "/Users/ayasofyazilim/Downloads/EscPosNetworkPrinterAPI-main/PrinterTestAPI/PrinterTestAPI.csproj",
+        "packagesPath": "/Users/ayasofyazilim/.nuget/packages/",
+        "outputPath": "/Users/ayasofyazilim/Downloads/EscPosNetworkPrinterAPI-main/PrinterTestAPI/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\omer.kocaman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/ayasofyazilim/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Users\\omer.kocaman\\Downloads": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/gpwapgmx7lRsLC9qz8qZaTbBjPjtDm3UB3NrhsKJJTVL9PgvPN/api": {}
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -47,17 +38,44 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "ESCPOS_NET": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
